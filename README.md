@@ -27,6 +27,12 @@ adb shell settings put global device_provisioned 1
 fastboot flash lk lk_edit.img
 ```
 
+## Remove statusbar icons
+
+```
+adb shell settings put secure icon_blacklist rotate,volume,do_not_disturb,headset
+```
+
 ## Remount,rw
 
 ```
