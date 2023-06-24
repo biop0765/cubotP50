@@ -78,3 +78,31 @@ adb shell su -c rm -f /product/app/YTMusic/YTMusic.apk
 adb shell su -c rm -f /system/system_ext/priv-app/GmsSimProcessor/GmsSimProcessor.apk
 adb shell su -c rm -f /system/priv-app/Stk1/Stk1.apk
 ```
+
+## Gallery
+
+- Unzip and dump Gallery2.tar as follows
+
+```
+P50:/ # ls -alR /product/priv-app/Gallery2                                                                                                       
+/product/priv-app/Gallery2:
+total 13716
+drwxr-xr-x  3 root root     4096 2023-06-22 17:35 .
+drwxr-xr-x 16 root root     4096 2023-06-24 12:03 ..
+-rwxr-xr-x  1 root root 14030002 2023-06-22 17:35 Gallery2.apk
+drwxr-xr-x  3 root root     4096 2023-06-22 17:35 lib
+
+/product/priv-app/Gallery2/lib:
+total 12
+drwxr-xr-x 3 root root 4096 2023-06-22 17:35 .
+drwxr-xr-x 3 root root 4096 2023-06-22 17:35 ..
+drwxr-xr-x 2 root root 4096 2023-06-22 17:35 arm64
+
+/product/priv-app/Gallery2/lib/arm64:
+total 396
+drwxr-xr-x 2 root root   4096 2023-06-22 17:35 .
+drwxr-xr-x 3 root root   4096 2023-06-22 17:35 ..
+-rwxr-xr-x 1 root root  11280 2023-06-22 17:35 libjni_gallery_eglfence.so
+-rwxr-xr-x 1 root root  40168 2023-06-22 17:35 libjni_gallery_filters.so
+-rwxr-xr-x 1 root root 342392 2023-06-22 17:35 libjni_gallery_jpegstream.so
+```
