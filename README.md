@@ -122,7 +122,7 @@ drwxr-xr-x 3 root root   4096 2023-06-22 17:35 ..
 adb reboot bootloader
 fastboot reboot fastboot
 fastboot flash system system-roar-arm64-ab-vanilla.img #A11
-# Without fail factory reset
+# Without fail factory reset from stock recovery
 ```
 - For AOSP 11 one needs to Phh Treble settings > Misc features > Use alternate way to detect headsets to enabled
 - Install Camera from GrapheneOS project
