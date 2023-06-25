@@ -112,3 +112,28 @@ drwxr-xr-x 3 root root   4096 2023-06-22 17:35 ..
 -rwxr-xr-x 1 root root  40168 2023-06-22 17:35 libjni_gallery_filters.so
 -rwxr-xr-x 1 root root 342392 2023-06-22 17:35 libjni_gallery_jpegstream.so
 ```
+
+
+## GSI
+
+- Download A11 AOSP GSI from https://github.com/phhusson/treble_experimentations
+  
+```
+adb reboot bootloader
+fastboot reboot fastboot
+fastboot flash system system-roar-arm64-ab-vanilla.img #A11
+# Without fail factory reset
+```
+- For AOSP 11 one needs to Phh Treble settings > Misc features > Use alternate way to detect headsets to enabled
+- Install Camera from GrapheneOS project
+- Everything just works fine
+
+- Notes: If fastboot tells you there isn't enough place, do
+
+```
+fastboot delete-logical-partition product
+fastboot delete-logical-partition product_a
+fastboot delete-logical-partition product_b
+then
+fastboot flash system system-roar-arm64-ab-vanilla.img #A11
+```
