@@ -30,7 +30,7 @@ fastboot flash lk lk_edit.img
 ## Remove statusbar icons
 
 ```
-adb shell settings put secure icon_blacklist rotate,volume,do_not_disturb,headset
+adb shell settings put secure icon_blacklist rotate,volume,do_not_disturb,vibrate,headset,location
 ```
 
 ## Remount,rw
