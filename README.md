@@ -50,39 +50,45 @@ adb shell su -c rm -f /product/priv-app/CarrierServices/CarrierServices.apk
 ## others
 
 ```
+#!/bin/bash
+
+adb shell su -c mount -o rw,remount /
+adb shell su -c mount -o rw,remount /product
+
+adb shell su -c rm -fr /system/system_ext/priv-app/DuraSpeed
 adb shell su -c rm -fr /system/app/AudioRecorderStoneoim
-adb shell su -c rm -f /product/app/YouTube/YouTube.apk
-adb shell su -c rm -f /product/priv-app/Velvet/Velvet.apk
-adb shell su -c rm -f /product/app/AssistantShell/AssistantShell.apk
-adb shell su -c rm -f /system/system_ext/priv-app/GoogleOneTimeInitializer/GoogleOneTimeInitializer.apk
-#adb shell su -c rm -f /product/app/Messages/Messages.apk
-adb shell su -c rm -f /product/priv-app/ConfigUpdater/ConfigUpdater.apk
-adb shell su -c rm -f /product/priv-app/Phonesky/Phonesky.apk
-adb shell su -c rm -f /product/app/talkback/talkback.apk
-adb shell su -c rm -f /product/app/Gmail2/Gmail2.apk
-adb shell su -c rm -f /product/app/Duo/Duo.apk
-#adb shell su -c rm -f /system/system_ext/priv-app/SetupWizard/SetupWizard.apk
-adb shell su -c rm -f /product/priv-app/Wellbeing/Wellbeing.apk
-#adb shell su -c rm -f /product/priv-app/GoogleDialer/GoogleDialer.apk
-adb shell su -c rm -f /product/priv-app/FilesGoogle/FilesGoogle.apk
-adb shell su -c rm -f /product/app/Drive/Drive.apk
-adb shell su -c rm -f /product/app/Maps/Maps.apk
-#adb shell su -c rm -f /product/app/GoogleContacts/GoogleContacts.apk
-#adb shell su -c rm -f /product/app/GoogleContactsSyncAdapter/GoogleContactsSyncAdapter.apk
-adb shell su -c rm -f /product/priv-app/GmsCore/GmsCore.apk
-adb shell su -c rm -f /product/app/SpeechServicesByGoogle/SpeechServicesByGoogle.apk
-adb shell su -c rm -f /product/app/GmsEEAType4cIntegration/GmsEEAType4cIntegration.apk
-adb shell su -c rm -f /product/priv-app/GooglePartnerSetup/GooglePartnerSetup.apk
-adb shell su -c rm -f /product/app/Videos/Videos.apk
-adb shell su -c rm -f /system/app/GooglePrintRecommendationService/GooglePrintRecommendationService.apk
-adb shell su -c rm -f /product/app/Photos/Photos.apk
-adb shell su -c rm -f /product/app/CalendarGoogle/CalendarGoogle.apk
-adb shell su -c rm -f /product/priv-app/AndroidAutoStub/AndroidAutoStub.apk
-adb shell su -c rm -f /product/priv-app/SearchSelector/SearchSelector.apk
-adb shell su -c rm -f /product/app/GoogleLocationHistory/GoogleLocationHistory.apk
-adb shell su -c rm -f /product/app/YTMusic/YTMusic.apk
-adb shell su -c rm -f /system/system_ext/priv-app/GmsSimProcessor/GmsSimProcessor.apk
-adb shell su -c rm -f /system/priv-app/Stk1/Stk1.apk
+adb shell su -c rm -fr /product/app/YouTube
+adb shell su -c rm -fr /product/priv-app/Velvet
+adb shell su -c rm -fr /product/app/AssistantShell
+adb shell su -c rm -fr /system/system_ext/priv-app/GoogleOneTimeInitializer
+#adb shell su -c rm -fr /product/app/Messages/Messages.apk
+adb shell su -c rm -fr /product/priv-app/ConfigUpdater
+adb shell su -c rm -fr /product/priv-app/Phonesky
+adb shell su -c rm -fr /product/app/talkback
+adb shell su -c rm -fr /product/app/Gmail2
+adb shell su -c rm -fr /product/app/Duo
+#adb shell su -c rm -fr /system/system_ext/priv-app/SetupWizard/SetupWizard.apk
+adb shell su -c rm -fr /product/priv-app/Wellbeing
+#adb shell su -c rm -fr /product/priv-app/GoogleDialer/GoogleDialer.apk
+adb shell su -c rm -fr /product/priv-app/FilesGoogle
+adb shell su -c rm -fr /product/app/Drive
+adb shell su -c rm -fr /product/app/Maps
+#adb shell su -c rm -fr /product/app/GoogleContacts/GoogleContacts.apk
+#adb shell su -c rm -fr /product/app/GoogleContactsSyncAdapter/GoogleContactsSyncAdapter.apk
+adb shell su -c rm -fr /product/priv-app/GmsCore
+adb shell su -c rm -fr /product/app/SpeechServicesByGoogle
+adb shell su -c rm -fr /product/app/GmsEEAType4cIntegration
+adb shell su -c rm -fr /product/priv-app/GooglePartnerSetup
+adb shell su -c rm -fr /product/app/Videos
+adb shell su -c rm -fr /system/app/GooglePrintRecommendationService
+adb shell su -c rm -fr /product/app/Photos
+adb shell su -c rm -fr /product/app/CalendarGoogle
+adb shell su -c rm -fr /product/priv-app/AndroidAutoStub
+adb shell su -c rm -fr /product/priv-app/SearchSelector
+#adb shell su -c rm -fr /product/app/GoogleLocationHistory
+adb shell su -c rm -fr /product/app/YTMusic
+adb shell su -c rm -fr /system/system_ext/priv-app/GmsSimProcessor
+adb shell su -c rm -fr /system/priv-app/Stk1
 ```
 
 ## Gallery
