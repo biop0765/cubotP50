@@ -120,6 +120,14 @@ drwxr-xr-x 3 root root   4096 2023-06-22 17:35 ..
 ```
 
 
+## Backup
+
+```
+adb shell "ls -Alg /dev/block/by-name | grep 'super'"
+adb shell su -c dd if=/dev/block/mmcblk0p35 of=/storage/emulated/0/P50-mmcblk0p35.img
+adb shell su -c dd if=/dev/block/dm-2 of=/storage/emulated/0/P50-dm-2.img
+```
+
 ## GSI
 
 - Download A11 AOSP GSI from https://github.com/phhusson/treble_experimentations
