@@ -120,12 +120,34 @@ drwxr-xr-x 3 root root   4096 2023-06-22 17:35 ..
 ```
 
 
-## Backup
+## Backup, resize, edit, and flash system.img
 
 ```
-adb shell "ls -Alg /dev/block/by-name | grep 'super'"
-adb shell su -c dd if=/dev/block/mmcblk0p35 of=/storage/emulated/0/P50-mmcblk0p35.img
-adb shell su -c dd if=/dev/block/dm-2 of=/storage/emulated/0/P50-dm-2.img
+# adb shell "ls -Alg /dev/block/by-name | grep 'super'"
+## did not use this # adb shell su -c dd if=/dev/block/mmcblk0p35 of=/storage/emulated/0/P50-mmcblk0p35.img
+# adb shell su -c dd if=/dev/block/dm-2 of=/storage/emulated/0/P50-dm-2.img
+# adb pull /storage/emulated/0/P50-dm-2.img ./
+```
+- Get the size of img
+```
+# du -sk P50-dm-2.img system-AOSP11-arm64-ab-vanilla.img 
+1242320	P50-dm-2.img
+1540172	system-AOSP11-arm64-ab-vanilla.img #as a comparison
+```
+- Run fsck and then resize
+```
+# e2fsck -f P50-dm-2.img
+# resize2fs P50-dm-2.img 1342320K
+```
+- Mount and edit `/mnt/1/system/etc/hosts`
+```
+# mount  P50-dm-2.img /mnt/1
+```
+- Reboot and flash system
+```
+# adb reboot bootloader
+# fastboot reboot fastboot
+# fastboot flash system  P50-dm-2.img
 ```
 
 ## GSI
