@@ -152,7 +152,8 @@ drwxr-xr-x 3 root root   4096 2023-06-22 17:35 ..
 
 ## GSI
 
-- Download A11 AOSP GSI from https://github.com/phhusson/treble_experimentations
+- Download A11 AOSP GSI from https://github.com/phhusson/treble_experimentations or use `system-230628-treble_arm64_bvN-userdebug-roar-arm64-ab-vanilla.img.xz`
+
   
 ```
 adb reboot bootloader
@@ -173,3 +174,9 @@ fastboot delete-logical-partition product_b
 then
 fastboot flash system system-roar-arm64-ab-vanilla.img #A11
 ```
+
+
+# limitations
+
+- Bluetooth does not find devices
+- Headphone jack (3.5mm) works after enabling `android:key="key_misc_headset_devinput"` in https://github.com/phhusson/treble_app
