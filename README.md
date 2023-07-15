@@ -91,35 +91,6 @@ adb shell su -c rm -fr /system/system_ext/priv-app/GmsSimProcessor
 adb shell su -c rm -fr /system/priv-app/Stk1
 ```
 
-## Gallery
-
-- Unzip and dump Gallery2.tar as follows
-
-```
-P50:/ # ls -alR /product/priv-app/Gallery2                                                                                                       
-/product/priv-app/Gallery2:
-total 13716
-drwxr-xr-x  3 root root     4096 2023-06-22 17:35 .
-drwxr-xr-x 16 root root     4096 2023-06-24 12:03 ..
--rwxr-xr-x  1 root root 14030002 2023-06-22 17:35 Gallery2.apk
-drwxr-xr-x  3 root root     4096 2023-06-22 17:35 lib
-
-/product/priv-app/Gallery2/lib:
-total 12
-drwxr-xr-x 3 root root 4096 2023-06-22 17:35 .
-drwxr-xr-x 3 root root 4096 2023-06-22 17:35 ..
-drwxr-xr-x 2 root root 4096 2023-06-22 17:35 arm64
-
-/product/priv-app/Gallery2/lib/arm64:
-total 396
-drwxr-xr-x 2 root root   4096 2023-06-22 17:35 .
-drwxr-xr-x 3 root root   4096 2023-06-22 17:35 ..
--rwxr-xr-x 1 root root  11280 2023-06-22 17:35 libjni_gallery_eglfence.so
--rwxr-xr-x 1 root root  40168 2023-06-22 17:35 libjni_gallery_filters.so
--rwxr-xr-x 1 root root 342392 2023-06-22 17:35 libjni_gallery_jpegstream.so
-```
-
-
 ## Backup, resize, edit, and flash system.img
 
 ```
@@ -142,6 +113,14 @@ drwxr-xr-x 3 root root   4096 2023-06-22 17:35 ..
 - Mount and edit `/mnt/1/system/etc/hosts`
 ```
 # mount  P50-dm-2.img /mnt/1
+```
+- After edits set proper selinux contexts
+```
+# In the mounted image inside linux x86_64
+apt-get install attr
+ls -Z /mnt/1/system/etc/hosts
+setfattr -n security.selinux -v u:object_r:system_file:s0 /mnt/1/system/etc/hosts
+umount /mnt/1
 ```
 - Reboot and flash system
 ```
